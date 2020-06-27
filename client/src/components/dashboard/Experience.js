@@ -19,13 +19,13 @@ class Experience extends Component {
           {exp.to === null ? (
             " Now"
           ) : (
-            <Moment format="YYYY/MM/DD">{exp.from}</Moment>
+            <Moment format="YYYY/MM/DD">{exp.to}</Moment>
           )}
         </td>
         <td>
           <button
-            className="btn btn-danger"
             onClick={this.onDeleteClick.bind(this, exp._id)}
+            className="btn btn-danger"
           >
             Delete
           </button>
@@ -41,7 +41,7 @@ class Experience extends Component {
               <th>Company</th>
               <th>Title</th>
               <th>Years</th>
-              <th></th>
+              <th />
             </tr>
             {experience}
           </thead>
@@ -50,6 +50,7 @@ class Experience extends Component {
     );
   }
 }
+
 Experience.propTypes = {
   deleteExperience: PropTypes.func.isRequired,
 };
