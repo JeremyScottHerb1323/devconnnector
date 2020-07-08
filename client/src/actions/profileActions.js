@@ -9,7 +9,7 @@ import {
   SET_CURRENT_USER,
 } from "./types";
 
-// GEt Current profile
+// Get current profile
 export const getCurrentProfile = () => (dispatch) => {
   dispatch(setProfileLoading());
   axios
@@ -28,7 +28,7 @@ export const getCurrentProfile = () => (dispatch) => {
     );
 };
 
-// GEt Current profile
+// Get profile by handle
 export const getProfileByHandle = (handle) => (dispatch) => {
   dispatch(setProfileLoading());
   axios
@@ -60,7 +60,7 @@ export const createProfile = (profileData, history) => (dispatch) => {
     );
 };
 
-// Add Experience
+// Add experience
 export const addExperience = (expData, history) => (dispatch) => {
   axios
     .post("/api/profile/experience", expData)
@@ -73,7 +73,7 @@ export const addExperience = (expData, history) => (dispatch) => {
     );
 };
 
-// Add Education
+// Add education
 export const addEducation = (eduData, history) => (dispatch) => {
   axios
     .post("/api/profile/education", eduData)
@@ -86,7 +86,7 @@ export const addEducation = (eduData, history) => (dispatch) => {
     );
 };
 
-// Delete experience
+// Delete Experience
 export const deleteExperience = (id) => (dispatch) => {
   axios
     .delete(`/api/profile/experience/${id}`)
@@ -104,7 +104,7 @@ export const deleteExperience = (id) => (dispatch) => {
     );
 };
 
-// Delete education
+// Delete Education
 export const deleteEducation = (id) => (dispatch) => {
   axios
     .delete(`/api/profile/education/${id}`)
@@ -141,7 +141,7 @@ export const getProfiles = () => (dispatch) => {
     );
 };
 
-//Delete account & Profile
+// Delete account & profile
 export const deleteAccount = () => (dispatch) => {
   if (window.confirm("Are you sure? This can NOT be undone!")) {
     axios
@@ -161,14 +161,14 @@ export const deleteAccount = () => (dispatch) => {
   }
 };
 
-// Profile Loading
+// Profile loading
 export const setProfileLoading = () => {
   return {
     type: PROFILE_LOADING,
   };
 };
 
-// Clear Profile
+// Clear profile
 export const clearCurrentProfile = () => {
   return {
     type: CLEAR_CURRENT_PROFILE,
